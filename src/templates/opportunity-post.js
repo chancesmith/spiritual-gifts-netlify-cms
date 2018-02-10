@@ -46,7 +46,6 @@ export const opportunityQuery = graphql`
         path
         date(formatString: "MMMM DD, YYYY")
         title
-        description
       }
     }
   }

@@ -36,8 +36,8 @@ export default class IndexPage extends React.Component {
             className="opportunities"
             style={{
               display: "grid",
-              "grid-template-columns": "repeat(3, 1fr)",
-              "grid-gap": "15px"
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gridGap: "15px"
             }}
           >
             {opportunities
