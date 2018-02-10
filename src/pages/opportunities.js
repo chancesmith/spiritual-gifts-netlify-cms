@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import Script from "react-load-script";
 import Gifts from "../components/Gifts";
 
-export default class IndexPage extends React.Component {
+export default class OpportunitiesPage extends React.Component {
   handleScriptLoad() {
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
