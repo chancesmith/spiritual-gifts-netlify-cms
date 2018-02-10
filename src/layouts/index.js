@@ -11,7 +11,7 @@ const Navbar = () => (
     <div className="container">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
-          <p>SH</p>
+          <p>do unto others</p>
         </Link>
       </div>
       <div className="navbar-start">
