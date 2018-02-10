@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import Script from "react-load-script";
+import Gifts from "../components/Gifts";
 
 export default class IndexPage extends React.Component {
   handleScriptLoad() {
@@ -20,6 +21,24 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: opportunities } = data.allMarkdownRemark;
+    // make list of gifts
+    var giftsArray = [];
+    const gifts = opportunities
+      .filter(post => post.node.frontmatter.templateKey === "opportunity-post")
+      .map(({ node: post }) => {
+        return post.frontmatter.gifts;
+      });
+    // change multi-dem array into single-dem
+    for (var i = 0; i < gifts.length; i++) {
+      for (var x = 0; x < gifts[i].length; x++) {
+        giftsArray.push(gifts[i][x]);
+      }
+    }
+    //remove duplicates
+    const uniqueArray = giftsArray.filter(function(item, pos) {
+      return giftsArray.indexOf(item) == pos;
+    });
+
     return (
       <section className="section">
         <Script
@@ -27,6 +46,28 @@ export default class IndexPage extends React.Component {
           onLoad={this.handleScriptLoad.bind(this)}
         />
         <div className="container">
+          <ul
+            className="gifts"
+            style={{
+              display: "flex",
+              margin: "12px"
+            }}
+          >
+            {uniqueArray.map(gift => {
+              return (
+                <li
+                  key={gift}
+                  className="gifts__item"
+                  style={{
+                    padding: "13px 18px",
+                    border: "1px solid #eee"
+                  }}
+                >
+                  {gift}
+                </li>
+              );
+            })}
+          </ul>
           <div className="content">
             <h1 className="has-text-weight-bold is-size-2">
               Opportunities to serve
@@ -85,6 +126,7 @@ export const pageQuery = graphql`
             templateKey
             date(formatString: "MMMM DD, YYYY")
             path
+            gifts
           }
         }
       }

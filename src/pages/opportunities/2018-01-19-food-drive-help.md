@@ -3,7 +3,7 @@ templateKey: opportunity-post
 path: /oppurtunities/food-drive-help
 title: 'Help with Food Drive'
 date: 2018-02-19T07:23:06-06:00
-tags:
+gifts:
   - "Helping Hands"
   - "Donations"
 ---
