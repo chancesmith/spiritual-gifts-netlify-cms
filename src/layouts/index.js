@@ -9,7 +9,7 @@ import "./all.sass";
 const Navbar = () => (
   <nav className="navbar is-transparent">
     <div className="container">
-      <div className="navbar-brand">
+      <div className="navbar-brand" style={{ background: "#eee" }}>
         <Link to="/" className="navbar-item">
           <p>do unto others</p>
         </Link>
