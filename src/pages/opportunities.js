@@ -46,7 +46,7 @@ export default class OpportunitiesPage extends React.Component {
                 <img src="http://sodiumhalogen.com/up_be/casey-horner-487085-iJrzaCAjf4.jpg" />
               </figure>
               <div className="select-content">
-                <h1>City Church</h1>
+                <h1> </h1>
                 <h2>Select Your Spiritual Gift</h2>
                 <select
                   className="giftSelector"
@@ -111,6 +111,11 @@ export default class OpportunitiesPage extends React.Component {
 
 export const pageQuery = graphql`
   query IndexQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
