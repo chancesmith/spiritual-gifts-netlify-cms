@@ -29,12 +29,13 @@ export default class OpportunitiesPage extends React.Component {
     return (
       <section className="section">
         <div className="container">
+          <h1 className="has-text-weight-bold is-size-2">Gift Selector</h1>
+          {/* GIFT SELECTOR DROPDOWN */}
           <select
             className="giftSelector"
             onChange={function() {
               var selector = document.querySelector(".giftSelector");
               var selectedGifts = selector.value;
-              console.log(selectedGifts);
             }}
             style={{
               display: "flex",
@@ -56,6 +57,7 @@ export default class OpportunitiesPage extends React.Component {
             <h1 className="has-text-weight-bold is-size-2">
               Opportunities to serve
             </h1>
+            <hr />
           </div>
           <div
             className="opportunities"
@@ -72,7 +74,7 @@ export default class OpportunitiesPage extends React.Component {
               .map(({ node: post }) => {
                 return (
                   <div
-                    className="content"
+                    className={post.frontmatter.gifts}
                     style={{
                       border: "1px solid #eaecee",
                       padding: "1.7em 3.5em",
