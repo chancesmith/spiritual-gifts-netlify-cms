@@ -23,7 +23,7 @@ $primary-invert: $kaldi-red-invert;
   margin-top: 0 !important;
 }
 
-.navbar {
+.navbar.is-transparent {
   display: none;
 }
 
@@ -51,9 +51,9 @@ $color_white: #f6f4ed;
     z-index: 1;
     overflow: hidden;
     &__skew {
-      -webkit-transform: skew(-35deg);
-      -moz-transform: skew(-35deg);
-      -o-transform: skew(-35deg);
+      -webkit-transform: skew(35deg);
+      -moz-transform: skew(35deg);
+      -o-transform: skew(35deg);
       background: $color_white;
       z-index: 2;
       width: 100%;
@@ -63,13 +63,14 @@ $color_white: #f6f4ed;
     figure {
       overflow: hidden;
       z-index: -10;
+      // margin: 0;
       img {
         width: 100%;
         height: 100vh;
         object-fit: cover;
-        -webkit-transform: skew(35deg);
-        -moz-transform: skew(35deg);
-        -o-transform: skew(35deg);
+        -webkit-transform: skew(-35deg);
+        -moz-transform: skew(-35deg);
+        -o-transform: skew(-35deg);
         opacity: 0.5;
         z-index: 1;
       }
@@ -78,23 +79,24 @@ $color_white: #f6f4ed;
       width: 100%;
       margin: auto;
       height: 100vh;
-      -webkit-transform: skew(35deg);
-      -moz-transform: skew(35deg);
-      -o-transform: skew(35deg);
+      -webkit-transform: skew(-35deg);
+      -moz-transform: skew(-35deg);
+      -o-transform: skew(-35deg);
       text-align: center;
       color: $color_black;
       position: absolute;
       top: 0;
       z-index: 100;
       h1 {
+        padding-top: 12%;
+        margin-bottom: 0;
         img {
           width: 40%;
-          margin-bottom: -70px;
         }
       }
       p {
-        font-size: 20px;
-        padding-bottom: 5%;
+        font-size: 25px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
       }
       .main-button {
         display: inline-block;
@@ -119,28 +121,29 @@ $color_white: #f6f4ed;
     z-index: 1;
     overflow: hidden;
     &__skew {
-      -webkit-transform: skew(35deg);
-      -moz-transform: skew(35deg);
-      -o-transform: skew(35deg);
+      -webkit-transform: skew(-35deg);
+      -moz-transform: skew(-35deg);
+      -o-transform: skew(-35deg);
       background: $color_white;
       z-index: 2;
       width: 100%;
       height: 100vh;
     }
     .about__header {
-      width: 65%;
+      width: 60%;
       height: 100vh;
       margin: auto;
-      -webkit-transform: skew(-35deg);
-      -moz-transform: skew(-35deg);
-      -o-transform: skew(-35deg);
+      -webkit-transform: skew(35deg);
+      -moz-transform: skew(35deg);
+      -o-transform: skew(35deg);
       text-align: center;
       color: $color_black;
       z-index: 3;
       h2 {
+        font-size: 35px;
         text-align: left;
         padding-bottom: 3%;
-        padding-top: 9%;
+        padding-top: 20%;
         color: $color_secondary;
       }
       p {
