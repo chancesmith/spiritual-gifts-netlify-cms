@@ -25,27 +25,20 @@ export default class IndexPage extends React.Component {
           url="https://identity.netlify.com/v1/netlify-identity-widget.js"
           onLoad={this.handleScriptLoad.bind(this)}
         />
-        <div className="container">
-          <ul
-            className="gifts"
-            style={{
-              display: "flex",
-              margin: "12px"
-            }}
-          />
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">
-              Opportunities to serve
-            </h1>
+        <div className="hero">
+          <div class="content__skew">
+            <div class="content__header">
+              <h1>
+                <img src="./img/croppedgifted.png " />
+              </h1>
+              <p>
+                We are here to connect a community need to your spiritual gift!
+              </p>
+              <a href="#" class="main-button">
+                Serve Now
+              </a>
+            </div>
           </div>
-          <div
-            className="opportunities"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gridGap: "15px"
-            }}
-          />
         </div>
       </section>
     );
