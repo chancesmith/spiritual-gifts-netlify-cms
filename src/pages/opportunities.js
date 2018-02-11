@@ -86,7 +86,7 @@ export default class OpportunitiesPage extends React.Component {
                 .map(({ node: post }) => {
                   return (
                     <div
-                      className="content"
+                      className={post.frontmatter.gifts}
                       style={{
                         border: "1px solid #eaecee",
                         padding: "1.7em 3.5em",
