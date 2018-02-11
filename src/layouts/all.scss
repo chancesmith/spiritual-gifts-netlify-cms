@@ -50,6 +50,9 @@ $color_white: #f6f4ed;
     background: linear-gradient(to right, $color_secondary, $color_main);
     z-index: 1;
     overflow: hidden;
+    @media screen and (max-width: 480px) {
+      background: $color_white;
+    }
     &__skew {
       -webkit-transform: skew(35deg);
       -moz-transform: skew(35deg);
@@ -89,6 +92,9 @@ $color_white: #f6f4ed;
       h1 {
         padding-top: 12%;
         margin-bottom: 0;
+        @media screen and (max-width: 480px) {
+          padding-top: 50%;
+        }
         img {
           width: 40%;
           max-width: 300px;
@@ -121,6 +127,9 @@ $color_white: #f6f4ed;
     background: linear-gradient(to right, $color_secondary, $color_main);
     z-index: 1;
     overflow: hidden;
+    @media screen and (max-width: 480px) {
+      background: $color_white;
+    }
     &__skew {
       -webkit-transform: skew(-35deg);
       -moz-transform: skew(-35deg);
@@ -165,6 +174,9 @@ $color_white: #f6f4ed;
         text-align: left;
         font-size: 20px;
         padding-bottom: 5%;
+        @media screen and (max-width: 480px) {
+          font-size: 15px;
+        }
       }
     }
   }
@@ -236,8 +248,6 @@ $color_white: #f6f4ed;
       }
     }
     .opportunities-gradient {
-      background: linear-gradient(to right, $color_secondary, $color_main);
-      min-height: 70vh;
       .opportunities-wrapper {
         min-height: 70vh;
         margin-left: 7%;
@@ -250,7 +260,8 @@ $color_white: #f6f4ed;
           border-bottom: solid 2px $color_main;
           width: fit-content;
         }
-        .content {}
+        .content {
+        }
         .opportunities {
           .title {
             font-size: 15px;
@@ -262,6 +273,9 @@ $color_white: #f6f4ed;
         .logo {
           img {
             width: 100px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
           }
         }
       }
