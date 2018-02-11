@@ -25,7 +25,6 @@ export default class IndexPage extends React.Component {
           url="https://identity.netlify.com/v1/netlify-identity-widget.js"
           onLoad={this.handleScriptLoad.bind(this)}
         />
-
         <div class="homepage">
           <div class="content">
             <div class="content__skew">
@@ -36,7 +35,10 @@ export default class IndexPage extends React.Component {
                 <h1>
                   <img src="http://sodiumhalogen.com/up_be/croppedGiftED-SpyRgwcM5V.png" />
                 </h1>
-                <p>Learn to exercise your spiritual gifts in Christ.</p>
+                <p>
+                  Find how your spiritual gift can benefit{" "}
+                  <strong>City Church</strong>.
+                </p>
                 <a href="/opportunities" class="main-button">
                   Serve Now
                 </a>
