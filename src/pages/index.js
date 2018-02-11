@@ -67,6 +67,12 @@ export default class IndexPage extends React.Component {
                     here
                   </a>.
                 </p>
+                <a
+                  href="http://www.findthegifted.com#about"
+                  class="main-button"
+                >
+                  Getting Started
+                </a>
               </div>
             </div>
           </div>
