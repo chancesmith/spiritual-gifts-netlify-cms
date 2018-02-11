@@ -29,6 +29,7 @@ export default class OpportunitiesPage extends React.Component {
     return (
       <section className="section">
         <div className="container">
+<<<<<<< HEAD
           <h1 className="has-text-weight-bold is-size-2">Gift Selector</h1>
           {/* GIFT SELECTOR DROPDOWN */}
           <select
@@ -81,18 +82,75 @@ export default class OpportunitiesPage extends React.Component {
                       margin: "0"
                     }}
                     key={post.id}
+=======
+          <div className="select-wrapper">
+            <select
+              className="giftSelector"
+              onChange={function() {
+                var selector = document.querySelector(".giftSelector");
+                var selectedGifts = selector.value;
+                console.log(selectedGifts);
+              }}
+              style={{
+                display: "flex",
+                margin: "12px"
+              }}
+            >
+              {uniqueArray.map(gift => {
+                return (
+                  <option
+                    // key={gift}
+                    value={gift}
+>>>>>>> 29e19e2a2758c2c16b1a1f1e2cbb1be641235618
                   >
-                    <p>
-                      <Link to={post.frontmatter.path}>
-                        {post.frontmatter.title}
-                      </Link>
-                      <span> &bull; </span>
-                      <small>{post.frontmatter.date}</small>
-                    </p>
-                    {/* <p>{post.excerpt}</p> */}
-                  </div>
+                    {gift}
+                  </option>
                 );
               })}
+            </select>
+          </div>
+          <div class="opportunities-wrapper">
+            <div className="content">
+              <h1 className="has-text-weight-bold is-size-2">
+                Opportunities to serve
+              </h1>
+            </div>
+            <div
+              className="opportunities"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gridGap: "15px"
+              }}
+            >
+              {opportunities
+                .filter(
+                  post =>
+                    post.node.frontmatter.templateKey === "opportunity-post"
+                )
+                .map(({ node: post }) => {
+                  return (
+                    <div
+                      className="content"
+                      style={{
+                        border: "1px solid #eaecee",
+                        padding: "1.7em 3.5em",
+                        margin: "0"
+                      }}
+                      key={post.id}
+                    >
+                      <p>
+                        <Link to={post.frontmatter.path}>
+                          {post.frontmatter.title}
+                        </Link>
+                        <span> &bull; </span>
+                        <small>{post.frontmatter.date}</small>
+                      </p>
+                      {/* <p>{post.excerpt}</p> */}
+                    </div>
+                  );
+                })}
+            </div>
           </div>
         </div>
       </section>
