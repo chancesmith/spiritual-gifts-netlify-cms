@@ -30,7 +30,7 @@ export default class IndexPage extends React.Component {
           <div class="content">
             <div class="content__skew">
               <figure>
-                <img src="http://sodiumhalogen.com/up_be/casey-horner-487085-iJrzaCAjf4.jpg" />
+                <img src="https://media1-production-mightynetworks.imgix.net/asset/2164486/istock_000006715814medium.jpg?ixlib=rails-0.3.0&fm=jpg&q=75&auto=format" />
               </figure>
               <div class="content__header">
                 <h1>

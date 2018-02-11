@@ -35,10 +35,8 @@ export default class OpportunitiesPage extends React.Component {
                 <img src="http://sodiumhalogen.com/up_be/casey-horner-487085-iJrzaCAjf4.jpg" />
               </figure>
               <div className="select-content">
-                <a href="/">
-                  <img src="http://sodiumhalogen.com/up_be/croppedGiftED-SpyRgwcM5V.png" />
-                </a>
-                <h1>Select Your Spiritual Gift</h1>
+                <h1>City Church</h1>
+                <h2>Select Your Spiritual Gift</h2>
                 <select
                   className="giftSelector"
                   onChange={function() {
@@ -64,47 +62,33 @@ export default class OpportunitiesPage extends React.Component {
               </div>
             </div>
           </div>
-          <div class="opportunities-wrapper">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">
-                Opportunities to serve
-              </h1>
-            </div>
-            <div
-              className="opportunities"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gridGap: "15px"
-              }}
-            >
-              {opportunities
-                .filter(
-                  post =>
-                    post.node.frontmatter.templateKey === "opportunity-post"
-                )
-                .map(({ node: post }) => {
-                  return (
-                    <div
-                      className={post.frontmatter.gifts}
-                      style={{
-                        border: "1px solid #eaecee",
-                        padding: "1.7em 3.5em",
-                        margin: "0"
-                      }}
-                      key={post.id}
-                    >
-                      <p>
-                        <Link to={post.frontmatter.path}>
-                          {post.frontmatter.title}
-                        </Link>
-                        <span> &bull; </span>
-                        <small>{post.frontmatter.date}</small>
-                      </p>
-                      {/* <p>{post.excerpt}</p> */}
-                    </div>
-                  );
-                })}
+          <div class="opportunities-gradient">
+            <div class="opportunities-wrapper">
+              <div className="content">
+                <h1 className="">Opportunities to serve</h1>
+              </div>
+              <div className="opportunities">
+                {opportunities
+                  .filter(
+                    post =>
+                      post.node.frontmatter.templateKey === "opportunity-post"
+                  )
+                  .map(({ node: post }) => {
+                    return (
+                      <div className={post.frontmatter.gifts} key={post.id}>
+                        <p>
+                          <span class="title">{post.frontmatter.title}</span>
+                          <span> &bull; </span>
+                          <span class="date">{post.frontmatter.date}</span>
+                        </p>
+                        <div className="content-body">{post.excerpt}</div>
+                      </div>
+                    );
+                  })}
+              </div>
+              <a href="/" class="logo">
+                <img src="http://sodiumhalogen.com/up_be/croppedGiftED-SpyRgwcM5V.png" />
+              </a>
             </div>
           </div>
         </div>
@@ -118,7 +102,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 200)
+          excerpt
           id
           frontmatter {
             title
