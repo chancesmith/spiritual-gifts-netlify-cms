@@ -30,7 +30,12 @@ export default class OpportunitiesPage extends React.Component {
       <section className="section">
         <div className="container">
           <select
-            className="gifts"
+            className="giftSelector"
+            onChange={function() {
+              var selector = document.querySelector(".giftSelector");
+              var selectedGifts = selector.value;
+              console.log(selectedGifts);
+            }}
             style={{
               display: "flex",
               margin: "12px"
@@ -112,8 +117,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-function val() {
-  d = document.getElementById("select_id").value;
-  alert(d);
-}
