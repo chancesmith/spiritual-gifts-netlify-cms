@@ -37,7 +37,7 @@ export default class IndexPage extends React.Component {
                   <img src="http://sodiumhalogen.com/up_be/croppedGiftED-SpyRgwcM5V.png" />
                 </h1>
                 <p>Learn to exercise your spiritual gifts in Christ.</p>
-                <a href="#" class="main-button">
+                <a href="/opportunities" class="main-button">
                   Serve Now
                 </a>
               </div>

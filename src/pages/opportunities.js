@@ -30,29 +30,39 @@ export default class OpportunitiesPage extends React.Component {
       <section className="section">
         <div className="container">
           <div className="select-wrapper">
-            <select
-              className="giftSelector"
-              onChange={function() {
-                var selector = document.querySelector(".giftSelector");
-                var selectedGifts = selector.value;
-                console.log(selectedGifts);
-              }}
-              style={{
-                display: "flex",
-                margin: "12px"
-              }}
-            >
-              {uniqueArray.map(gift => {
-                return (
-                  <option
-                    // key={gift}
-                    value={gift}
-                  >
-                    {gift}
-                  </option>
-                );
-              })}
-            </select>
+            <div className="select-skew">
+              <figure>
+                <img src="http://sodiumhalogen.com/up_be/casey-horner-487085-iJrzaCAjf4.jpg" />
+              </figure>
+              <div className="select-content">
+                <a href="/">
+                  <img src="http://sodiumhalogen.com/up_be/croppedGiftED-SpyRgwcM5V.png" />
+                </a>
+                <h1>Select Your Spiritual Gift</h1>
+                <select
+                  className="giftSelector"
+                  onChange={function() {
+                    var selector = document.querySelector(".giftSelector");
+                    var selectedGifts = selector.value;
+                    console.log(selectedGifts);
+                  }}
+                  style={{
+                    margin: "12px"
+                  }}
+                >
+                  {uniqueArray.map(gift => {
+                    return (
+                      <option
+                        // key={gift}
+                        value={gift}
+                      >
+                        {gift}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+            </div>
           </div>
           <div class="opportunities-wrapper">
             <div className="content">
