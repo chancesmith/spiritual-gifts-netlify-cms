@@ -51,14 +51,15 @@ export default class IndexPage extends React.Component {
               <div class="about__header">
                 <h2>About</h2>
                 <p>
-                  GiftED educates Christians on how to exercise their spiritual
-                  gifts given by the Holy Spirit, as described in Romans 12 and
-                  1 Corinthians 12. Simply search for serving opportunities in
-                  your community, and filter the results by spiritual gifts.
+                  Gifted aims to help Christians exercise their spiritual gifts
+                  given by the Holy Spirit by showing them ways they can use
+                  their gifts in their local body.t, as described in Romans 12
+                  and 1 Corinthians 12. Simply search for serving opportunities
+                  in your community, and filter the results by spiritual gifts.
                   Whether you're equipped with the gift of prophesy, discernment
-                  or any of the supernatural abilities given by Christ, GiftED
-                  will find a match, allowing you to strengthen your faith and
-                  live purposefully.
+                  or any of the spiritual gifts given by Christ, Gifted will
+                  find a match, allowing you to strengthen your faith and live
+                  purposefully.
                 </p>
                 <p>
                   Uncertain about your spiritual gifts? Take an assessment{" "}
