@@ -104,21 +104,21 @@ $color_white: #f6f4ed;
         font-size: 25px;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
       }
-      .main-button {
-        display: inline-block;
-        background: $color_secondary;
-        padding: 15px 30px;
-        border-radius: 20px;
-        text-decoration: none;
-        color: $color_white;
-        transition-duration: 0.2s;
-        z-index: 100;
-        &:hover {
-          transform: scale(1.1);
-          background: $color_main;
-          color: $color_black;
-        }
-      }
+    }
+  }
+  .main-button {
+    display: inline-block;
+    background: $color_secondary;
+    padding: 15px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: $color_white;
+    transition-duration: 0.2s;
+    z-index: 100;
+    &:hover {
+      transform: scale(1.1);
+      background: $color_main;
+      color: $color_black;
     }
   }
   .about {
@@ -271,11 +271,11 @@ $color_white: #f6f4ed;
           }
         }
         .logo {
+          position: absolute;
+          bottom: 0;
+          right: 0;
           img {
             width: 100px;
-            position: absolute;
-            bottom: 0;
-            right: 0;
           }
         }
       }
