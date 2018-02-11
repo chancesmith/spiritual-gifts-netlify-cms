@@ -29,7 +29,7 @@ export default class OpportunitiesPage extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <ul
+          <select
             className="gifts"
             style={{
               display: "flex",
@@ -38,19 +38,15 @@ export default class OpportunitiesPage extends React.Component {
           >
             {uniqueArray.map(gift => {
               return (
-                <li
-                  key={gift}
-                  className="gifts__item"
-                  style={{
-                    padding: "13px 18px",
-                    border: "1px solid #eee"
-                  }}
+                <option
+                  // key={gift}
+                  value={gift}
                 >
                   {gift}
-                </li>
+                </option>
               );
             })}
-          </ul>
+          </select>
           <div className="content">
             <h1 className="has-text-weight-bold is-size-2">
               Opportunities to serve
@@ -116,3 +112,8 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+function val() {
+  d = document.getElementById("select_id").value;
+  alert(d);
+}
