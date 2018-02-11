@@ -189,9 +189,9 @@ $color_white: #f6f4ed;
       overflow: hidden;
       .select-skew {
         height: 30vh;
-        -webkit-transform: skew(45deg);
-        -moz-transform: skew(45deg);
-        -o-transform: skew(45deg);
+        -webkit-transform: skew(35deg);
+        -moz-transform: skew(35deg);
+        -o-transform: skew(35deg);
         background: $color_white;
         figure {
           overflow: hidden;
@@ -201,18 +201,18 @@ $color_white: #f6f4ed;
             width: 100%;
             height: 30vh;
             object-fit: cover;
-            -webkit-transform: skew(-45deg);
-            -moz-transform: skew(-45deg);
-            -o-transform: skew(-45deg);
+            -webkit-transform: skew(-35deg);
+            -moz-transform: skew(-35deg);
+            -o-transform: skew(-35deg);
             opacity: 0.5;
             z-index: 1;
           }
         }
         .select-content {
           height: 30vh;
-          -webkit-transform: skew(-45deg);
-          -moz-transform: skew(-45deg);
-          -o-transform: skew(-45deg);
+          -webkit-transform: skew(-35deg);
+          -moz-transform: skew(-35deg);
+          -o-transform: skew(-35deg);
           position: absolute;
           top: 0;
           right: 0;
@@ -240,7 +240,7 @@ $color_white: #f6f4ed;
       min-height: 70vh;
       .opportunities-wrapper {
         min-height: 70vh;
-        margin-left: 102px;
+        margin-left: 98px;
         padding: 15px 50px;
         background: white;
         h1 {
@@ -250,7 +250,8 @@ $color_white: #f6f4ed;
           border-bottom: solid 2px $color_main;
           width: fit-content;
         }
-        .content {}
+        .content {
+        }
         .opportunities {
           .title {
             font-size: 15px;
