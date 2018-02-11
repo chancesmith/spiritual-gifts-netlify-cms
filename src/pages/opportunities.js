@@ -9,7 +9,7 @@ export default class OpportunitiesPage extends React.Component {
     super();
     this.filterOpportunities = this.filterOpportunities.bind(this);
 
-    this.state = { spiritualGift: null };
+    this.state = { spiritualGift: "All" };
   }
   filterOpportunities(e) {
     this.setState({ spiritualGift: e.target.value });
@@ -32,9 +32,10 @@ export default class OpportunitiesPage extends React.Component {
       }
     }
     //remove duplicates
-    const uniqueArray = giftsArray.filter(function(item, pos) {
+    let uniqueArray = giftsArray.filter(function(item, pos) {
       return giftsArray.indexOf(item) == pos;
     });
+    uniqueArray.unshift("All");
 
     return (
       <section className="section">
@@ -84,9 +85,12 @@ export default class OpportunitiesPage extends React.Component {
               {opportunities
                 .filter(
                   post =>
-                    post.node.frontmatter.templateKey === "opportunity-post" &&
-                    spiritualGift &&
-                    post.node.frontmatter.gifts.indexOf(spiritualGift) != -1
+                    (post.node.frontmatter.templateKey === "opportunity-post" &&
+                      spiritualGift &&
+                      post.node.frontmatter.gifts.indexOf(spiritualGift) !=
+                        -1) ||
+                    (post.node.frontmatter.templateKey === "opportunity-post" &&
+                      spiritualGift === "All")
                 )
                 .map(({ node: post }) => {
                   console.log(post);
