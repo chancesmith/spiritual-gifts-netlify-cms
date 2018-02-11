@@ -5,8 +5,18 @@ import Script from "react-load-script";
 import Gifts from "../components/Gifts";
 
 export default class OpportunitiesPage extends React.Component {
+  constructor() {
+    super();
+    this.filterOpportunities = this.filterOpportunities.bind(this);
+
+    this.state = { spiritualGift: null };
+  }
+  filterOpportunities(e) {
+    this.setState({ spiritualGift: e.target.value });
+  }
   render() {
     const { data } = this.props;
+    const { spiritualGift } = this.state;
     const { edges: opportunities } = data.allMarkdownRemark;
     // make list of gifts
     var giftsArray = [];
@@ -41,21 +51,14 @@ export default class OpportunitiesPage extends React.Component {
                 <h1>Select Your Spiritual Gift</h1>
                 <select
                   className="giftSelector"
-                  onChange={function() {
-                    var selector = document.querySelector(".giftSelector");
-                    var selectedGifts = selector.value;
-                    console.log(selectedGifts);
-                  }}
+                  onChange={e => this.filterOpportunities(e)}
                   style={{
                     margin: "12px"
                   }}
                 >
-                  {uniqueArray.map(gift => {
+                  {uniqueArray.map((gift, index) => {
                     return (
-                      <option
-                        // key={gift}
-                        value={gift}
-                      >
+                      <option key={index} value={gift}>
                         {gift}
                       </option>
                     );
@@ -64,7 +67,7 @@ export default class OpportunitiesPage extends React.Component {
               </div>
             </div>
           </div>
-          <div class="opportunities-wrapper">
+          <div className="opportunities-wrapper">
             <div className="content">
               <h1 className="has-text-weight-bold is-size-2">
                 Opportunities to serve
@@ -81,9 +84,12 @@ export default class OpportunitiesPage extends React.Component {
               {opportunities
                 .filter(
                   post =>
-                    post.node.frontmatter.templateKey === "opportunity-post"
+                    post.node.frontmatter.templateKey === "opportunity-post" &&
+                    spiritualGift &&
+                    post.node.frontmatter.gifts.indexOf(spiritualGift) != -1
                 )
                 .map(({ node: post }) => {
+                  console.log(post);
                   return (
                     <div
                       className={post.frontmatter.gifts}
